@@ -6,5 +6,5 @@ Team members:
 | ------------- | ------------- | ------------- |
 | Nicola Bdewi  | 40161428  | nicola98b@gmail.com  |
 | Sofia Valiante  | 40191897  | valiante.sofia@gmail.com  |
-| Dominique Isbister | | |
+| Dominique Isbister | 40210056 | Disbister.reid@gmail.com |
 
