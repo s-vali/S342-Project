@@ -8,4 +8,4 @@ Team members:
 | Sofia Valiante  | 40191897  | valiante.sofia@gmail.com  |
 | Dominique Isbister | 40210056 | Disbister.reid@gmail.com |
 
-Team leader: Nicola Bdewi
+
