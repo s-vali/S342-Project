@@ -3,15 +3,25 @@ public class Sensor {
 
 	private boolean isDeployed;
 	private int sensorID;
+	private Location location;
+	private Temperature temperature; //no Temperature temperature because the association class will hold the attributes Sensor and Temperature have in common
 	
 	//Constructor
 	public Sensor(boolean isDeployed, int sensorID) {
-		super();
 		this.isDeployed = isDeployed;
 		this.sensorID = sensorID;
 	}
+	
+	/*
+	public Sensor(boolean isDeployed, int sensorID, Location location, Temperature temperature) {
+		this.isDeployed = isDeployed;
+		this.sensorID = sensorID;
+		this.location = location;
+		this.temperature = temperature;
+	}
+	*/
 
-	//Getters and Setter methods
+	//Getters and Setters methods
 	public boolean isDeployed() {
 		return isDeployed;
 	}
@@ -27,9 +37,23 @@ public class Sensor {
 	public void setSensorID(int sensorID) {
 		this.sensorID = sensorID;
 	}
+
+	/*
+	public Location getLocation() {
+		return location;
+	}
+
+	public void setLocation(Location location) {
+		this.location = location;
+	}
+
+	public Temperature getTemperature() {
+		return temperature;
+	}
+
+	public void setTemperature(Temperature temperature) {
+		this.temperature = temperature;
+	}
+	*/
 	
-	
-	
-	
-	
-}
+} //end of class
