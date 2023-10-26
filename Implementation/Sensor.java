@@ -1,14 +1,18 @@
 
 public class Sensor {
 
-	//Attributes
+	/*
+	 * Attributes
+	 */
 	private boolean isDeployed;
 	private int sensorID;
 	private Location location;
 	private Temperature temperature;
 	private SensorRegistry sensorRegistry; 
 	
-	//Constructor
+	/*
+	 * Constructor
+	 */
 	public Sensor(boolean isDeployed, int sensorID) {
 		this.isDeployed = isDeployed;
 		this.sensorID = sensorID;
@@ -20,7 +24,9 @@ public class Sensor {
 		this.temperature = temperature;
 	}
 
-	//Getters and Setters methods
+	/*
+	 * Getters and Setters
+	 */
 	public boolean isDeployed() { return isDeployed; }
 	public void setDeployed(boolean isDeployed) { this.isDeployed = isDeployed; }
 	public int getSensorID() { return sensorID; }
