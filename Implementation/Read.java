@@ -1,37 +1,56 @@
+import java.util.HashMap;
 
 public class Read {
 
-	//Attributes
+	/*
+	 * Attributes
+	 */
 	private Temperature temperature;
 	private Sensor sensor;
+	//private HashMap<Sensor, Temperature> sensorTemperaturePairs;
 	
-	//Constructor
+	/*
+	 * Constructor
+	 */
+	public Read() {}
 	public Read(Sensor sensor, Temperature temperature) {
-		this.temperature = temperature;
 		this.sensor = sensor;
+		this.temperature = temperature;
 	}
 	
-	//Getters and Setters
-	public Temperature getTemperature() {
-		return temperature;
-	}
+	/*
+	 * Getters and Setters
+	 */
+	//public HashMap<Sensor, Temperature> getSensorTemperaturePairs() { return sensorTemperaturePairs; }
+	//public void setSensorTemperaturePairs(HashMap<Sensor, Temperature> sensorTemperaturePairs) { this.sensorTemperaturePairs = sensorTemperaturePairs; }
 
-	public void setTemperature(Temperature temperature) {
-		this.temperature = temperature;
-	}
-
-	public Sensor getSensor() {
-		return sensor;
-	}
-
-	public void setSensor(Sensor sensor) {
-		this.sensor = sensor;
-	}
-
-	//Methods
-	public Temperature readTemperatureHASHMAP(Location location) {
+	/*
+	 * Methods
+	 */
+	public String toString() {
+        return "MapsSensorTemp{" +
+                "sensorTemperaturePairs=" + Reads.getReads() +
+                '}';
+    }
+	
+	/*
+	 * DOM'S CODE FOR ADD(SENSOR, TEMPERATURE) HERE
+	 */
+	
+	//Will continue readTemperature(location) later
+	public Temperature readTemperature(Location location) {
+		Map map = new Map(); 
+		boolean has = map.hasLocation(location);
+		if(has) {
+			Sensor sensor = map.getSensorMap(location);
+			Temperature temperature = Reads.getReads().get(sensor);
+			System.out.println("ok");
+			return temperature;
+		}
+		else {
+			System.out.println("Location not covered.");
+		}
 		return null;
-	}
-	
+	}	
 
 } //end of class
