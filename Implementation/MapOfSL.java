@@ -4,6 +4,7 @@ public class MapOfSL
 {
     private Sensor sensor;
     private Location location;
+    private static int sensorId = 0;
 
 
     public HashMap<Sensor, Location> getSensorLocationPairs() {
@@ -21,16 +22,25 @@ public class MapOfSL
         return true;
     }
 
-    public void DeploySensor(Sensor sensor, Location location) {
+    // Assigning a sensor-location pairs.
+    public void DeploySensorLocation(Sensor sensor, Location location) {
         if(loopThroughIds(sensor)){
+            sensor.setSensorID(getNextUniqueNumber());
             Maps.getMaps().putIfAbsent(sensor, location);
             sensor.setDeployed(true);
+            System.out.println("Sensor deployed");
+            System.out.println("Ok");
         }
         else {
             System.out.println(sensor.getSensorID());
             sensor.setDeployed(false);
         }
+    }
 
+    // Assign unique ids to a sensor when deployed.
+    public static int getNextUniqueNumber(){
+        sensorId += 1;
+        return sensorId;
     }
 
     public void clearPairs (){
