@@ -7,7 +7,7 @@ public class Read {
 	 */
 	private Temperature temperature;
 	private Sensor sensor;
-	private HashMap<Sensor, Temperature> sensorTemperaturePairs;
+	//private HashMap<Sensor, Temperature> sensorTemperaturePairs;
 	
 	/*
 	 * Constructor
@@ -21,8 +21,8 @@ public class Read {
 	/*
 	 * Getters and Setters
 	 */
-	public HashMap<Sensor, Temperature> getSensorTemperaturePairs() { return sensorTemperaturePairs; }
-	public void setSensorTemperaturePairs(HashMap<Sensor, Temperature> sensorTemperaturePairs) { this.sensorTemperaturePairs = sensorTemperaturePairs; }
+	//public HashMap<Sensor, Temperature> getSensorTemperaturePairs() { return sensorTemperaturePairs; }
+	//public void setSensorTemperaturePairs(HashMap<Sensor, Temperature> sensorTemperaturePairs) { this.sensorTemperaturePairs = sensorTemperaturePairs; }
 
 	/*
 	 * Methods
