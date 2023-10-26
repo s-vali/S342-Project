@@ -3,6 +3,10 @@ import java.util.HashSet;
 public class SensorRegistry {
         private static final HashSet<Sensor> sensors = new HashSet<Sensor>();
 
+        public static HashSet<Sensor> getSensorRegistry() {
+                return sensors;
+        }
+
         SensorRegistry(Sensor s){
                 sensors.add(s);
         }
