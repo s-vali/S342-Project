@@ -13,7 +13,6 @@ public class Sensor {
 		this.isDeployed = isDeployed;
 		this.sensorID = sensorID;
 	}
-	
 	public Sensor(boolean isDeployed, int sensorID, Location location, Temperature temperature) {
 		this.isDeployed = isDeployed;
 		this.sensorID = sensorID;
