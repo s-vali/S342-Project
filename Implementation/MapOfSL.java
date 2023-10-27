@@ -11,13 +11,12 @@ public class MapOfSL
         return Maps.getMaps();
     }
 
+   // Helper function for DeploySensor()
     public Boolean loopThroughIds(Sensor s){
-
         for (Sensor key : Maps.getMaps().keySet()) {
             if(s.getSensorID() == key.getSensorID()){
                 return false;
             }
-
         }
         return true;
     }
@@ -25,15 +24,14 @@ public class MapOfSL
     // Assigning a sensor-location pairs.
     public void DeploySensorLocation(Sensor sensor, Location location) {
         if(loopThroughIds(sensor)){
-            sensor.setSensorID(getNextUniqueNumber());
             Maps.getMaps().putIfAbsent(sensor, location);
             sensor.setDeployed(true);
+            location.setCovered(true);
             System.out.println("Sensor deployed");
             System.out.println("Ok");
         }
         else {
-            System.out.println(sensor.getSensorID());
-            sensor.setDeployed(false);
+            System.out.println("Sensor already deployed");
         }
     }
 
