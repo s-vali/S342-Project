@@ -14,6 +14,7 @@ public class Location
 
     public Location(String location) {
         this.location = location;
+        
     }
 
     public boolean isCovered() {

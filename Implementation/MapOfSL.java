@@ -27,6 +27,7 @@ public class MapOfSL
             Maps.getMaps().putIfAbsent(sensor, location);
             sensor.setDeployed(true);
             location.setCovered(true);
+            Read.deploySensorTemp(sensor);
             System.out.println("Sensor deployed");
             System.out.println("Ok");
         }

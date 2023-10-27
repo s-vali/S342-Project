@@ -37,7 +37,7 @@ public class Read {
 	/*
 	 * DOM'S CODE FOR ADD(SENSOR, TEMPERATURE) HERE
 	 */
-	public void Add(Sensor sensor){
+	public static void deploySensorTemp(Sensor sensor){
 		Temperature temp = new Temperature();
 		Reads.getReads().put(sensor, temp);
 	}
