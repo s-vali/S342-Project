@@ -9,10 +9,22 @@ public class Sensor {
 	private Location location;
 	private Temperature temperature;
 	private SensorRegistry sensorRegistry; 
-	
+	private static int sensorId = 0;
+
+    // Assign unique ids to a sensor when deployed.
+    public static int getNextUniqueNumber(){
+        sensorId += 1;
+        return sensorId;
+    }
+
 	/*
 	 * Constructor
 	 */
+        public Sensor(){
+        this.sensorID = getNextUniqueNumber();
+        SensorRegistry.getSensorRegistry().add(this);
+        }
+	
 	public Sensor(boolean isDeployed, int sensorID) {
 		this.isDeployed = isDeployed;
 		this.sensorID = sensorID;
