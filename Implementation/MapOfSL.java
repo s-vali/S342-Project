@@ -61,7 +61,14 @@ public class MapOfSL
     }
 
     public boolean hasLocation(Location location) {
-        return Maps.getMaps().containsValue(location);
+        if (Maps.getMaps().containsValue(location)){
+            System.out.println("Location already covered′");
+            return true;
+        }
+        else {
+            System.out.println("Location not covered");
+            return false;
+        }
     }
 
 }
