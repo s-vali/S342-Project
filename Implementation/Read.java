@@ -1,4 +1,5 @@
 import java.util.HashMap;
+import java.util.Map;
 
 public class Read {
 
@@ -36,6 +37,10 @@ public class Read {
 	/*
 	 * DOM'S CODE FOR ADD(SENSOR, TEMPERATURE) HERE
 	 */
+	public void Add(Sensor sensor){
+		Temperature temp = new Temperature();
+		Reads.getReads().put(sensor, temp);
+	}
 	
 	//Will continue readTemperature(location) later
 	public Temperature readTemperature(Location location) {

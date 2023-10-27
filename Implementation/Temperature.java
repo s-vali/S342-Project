@@ -1,13 +1,15 @@
 public class Temperature {
-    private float temperature;
 
-    public final float getCelsius()
+    private int temperature;
+
+    public Temperature(){
+        temperature = (int)(Math.random() *30 -30);
+    }
+
+    //** Getters */
+    public int getCelsius()
     {
         return (int)(Math.random() *30 -30);
     }
 
-    public final float getFahrenheit()
-    {
-        return (int)(Math.random() *86 - 22);
-    }
 }
