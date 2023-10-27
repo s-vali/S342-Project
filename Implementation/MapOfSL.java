@@ -4,7 +4,7 @@ public class MapOfSL
 {
     private Sensor sensor;
     private Location location;
-    private static int sensorId = 0;
+    
 
 
     public HashMap<Sensor, Location> getSensorLocationPairs() {
@@ -35,11 +35,6 @@ public class MapOfSL
         }
     }
 
-    // Assign unique ids to a sensor when deployed.
-    public static int getNextUniqueNumber(){
-        sensorId += 1;
-        return sensorId;
-    }
 
     public void clearPairs (){
         Maps.getMaps().clear();
