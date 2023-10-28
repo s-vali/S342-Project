@@ -57,6 +57,7 @@ public class Main {
 	System.out.println("Consider l3=" + l3 + ", s3=" + s3);
 	System.out.println("Getting sensor associated with l3: " + maps.getSensorMap(l3));
 	Temperature t3 = reads.readTemperature(l3);
+	System.out.println("The Temperature instance found is: " + t3);
 	Temperature.showTemperature(t3);
 	
 	System.out.println("\n--Testing on location that does not exist in LocationRegistry");
