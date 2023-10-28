@@ -49,7 +49,6 @@ public class Main {
         System.out.println("--Deploying new (sensor, location) --> (s2, l2) and (s3, l3): ");
 	maps.DeploySensorLocation(s2,l2);//deploying new sensors, will yield their own temperatures and add to Reads table
 	maps.DeploySensorLocation(s3,l3);
-	maps.print();
 		
 	System.out.println("\n--Testing readTemperature");
 	Read reads = new Read();
