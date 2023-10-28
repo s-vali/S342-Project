@@ -16,7 +16,7 @@ public class Reads {
 	 * Singleton Method
 	 */
 	public static HashMap<Sensor, Temperature> getReads() {
-        return sensorTemperaturePairs;
-    }	
+        	return sensorTemperaturePairs;
+    	}	
 	
 } //end of class
