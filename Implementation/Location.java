@@ -2,7 +2,7 @@ public class Location
 {
     private boolean isCovered;
     private String location;
-    private Sensor sensor;
+    //private Sensor sensor;
 
     @Override
     public String toString() {
@@ -14,13 +14,22 @@ public class Location
 
     public Location(String location) {
         this.location = location;
-        
     }
 
+    //** Getters */
     public boolean isCovered() {
         return isCovered;
     }
 
+    public String getLocation() {
+        return location;
+    }
+
+    //public Sensor getSensor() {
+      //  return sensor;
+    //} 
+
+    //** Setters */
     public void setCovered(boolean covered) {
         isCovered = covered;
     }
@@ -29,16 +38,8 @@ public class Location
         this.location = location;
     }
 
-    public Sensor getSensor() {
-        return sensor;
-    }
-
-    public String getLocation() {
-        return location;
-    }
-
-    public void setSensor(Sensor sensor) {
-        this.sensor = sensor;
-    }
+    //public void setSensor(Sensor sensor) {
+      //  this.sensor = sensor;
+    //}
 
 }

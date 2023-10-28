@@ -9,7 +9,7 @@ public class Temperature {
     //** Getters */
     public int getCelsius()
     {
-        return (int)(Math.random() *30 -30);
+        return this.temperature;
     }
 
 }
