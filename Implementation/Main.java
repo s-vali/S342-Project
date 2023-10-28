@@ -47,20 +47,19 @@ public class Main {
         System.out.println(maps.getSensorLocationPairs()+"\n");
 
         System.out.println("--Deploying new (sensor, location) --> (s2, l2) and (s3, l3): ");
-		maps.DeploySensorLocation(s2,l2);//deploying new sensors, will yield their own temperatures and add to Reads table
-		maps.DeploySensorLocation(s3,l3);
-		maps.print();
+	maps.DeploySensorLocation(s2,l2);//deploying new sensors, will yield their own temperatures and add to Reads table
+	maps.DeploySensorLocation(s3,l3);
+	maps.print();
 		
-		System.out.println("\n--Testing readTemperature");
-		Read reads = new Read();
+	System.out.println("\n--Testing readTemperature");
+	Read reads = new Read();
         System.out.println(reads.toString());
-		System.out.println("Consider l3=" + l3 + ", s3=" + s3);
-		System.out.println("Getting sensor associated with l3: " + maps.getSensorMap(l3));
-		Temperature t3 = reads.readTemperature(l3);
-		Temperature.showTemperature(t3);
-		
-		System.out.println();
-		System.out.println("--Testing on location that does not exist in LocationRegistry");
-		Temperature.showTemperature(reads.readTemperature(new Location("Boston")));
+	System.out.println("Consider l3=" + l3 + ", s3=" + s3);
+	System.out.println("Getting sensor associated with l3: " + maps.getSensorMap(l3));
+	Temperature t3 = reads.readTemperature(l3);
+	Temperature.showTemperature(t3);
+	
+	System.out.println("\n--Testing on location that does not exist in LocationRegistry");
+	Temperature.showTemperature(reads.readTemperature(new Location("Boston")));
     }
 }
