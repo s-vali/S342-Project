@@ -4,7 +4,7 @@ public class Main {
         Sensor s1 = new Sensor();
         Sensor s2 = new Sensor();
         Sensor s3 = new Sensor();
-        Location l1 = new Location("Monteal");
+        Location l1 = new Location("Montreal");
         Location l2 = new Location("Detroit");
         Location l3 = new Location("Quebec");
         LocationRegistry.addLocation(l1);
@@ -14,7 +14,7 @@ public class Main {
 
         //** Testing that a location cannot be doubled in the registry */
         System.out.println("\nAdding a duplicate location for testing:");
-        Location l4 = new Location("Quebec");
+        Location l4 = new Location("Montreal");
         LocationRegistry.addLocation(l4);
 
         System.out.println("\nDisplaying Registries to demonstrate that all locations were added as expected:");
@@ -31,7 +31,7 @@ public class Main {
         System.out.println(maps.getSensorLocationPairs()+"\n");
 
         //** Trying to deploy a new sensor in a location that is already covered */
-        maps.DeploySensorLocation(s2,l1);
+        maps.DeploySensorLocation(s2,l4);
         System.out.println(maps.getSensorLocationPairs()+"\n");
 
         //** Creating a location that we do not know and trying to send a sensor there */

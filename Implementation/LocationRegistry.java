@@ -9,8 +9,13 @@ public class LocationRegistry {
         }
 
         //** Getter */
-        public static HashMap<String,Location> getLocationRegistry() {
-                return locations;
+        //public static HashMap<String,Location> getLocationRegistry() {
+        //        return locations;
+        //}
+        
+        //** Getter */
+        public static Collection<Location> getLocationRegistry() {
+                return locations.values();
         }
 
         //** Add location method */
@@ -39,7 +44,7 @@ public class LocationRegistry {
 
         //** Checking if location exists in hash set */
         public static Boolean hasLocation(Location l){
-                return locations.containsKey(l.getLocation()) || locations.containsValue(l);
+                return locations.containsValue(l);
         }
 
 }

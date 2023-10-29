@@ -4,13 +4,13 @@ public class Location
     private String location;
     //private Sensor sensor;
 
-    @Override
-    public String toString() {
-        return ",Location: " +
-                "isCovered=" + isCovered +
-                ", location= " + location +
-                ' ';
-    }
+    //@Override
+    //public String toString() {
+    //    return ",Location: " +
+    //            "isCovered=" + isCovered +
+    //            ", location= " + location +
+    //            ' ';
+    //}
 
     public Location(String location) {
         this.location = location;
@@ -41,5 +41,11 @@ public class Location
     //public void setSensor(Sensor sensor) {
       //  this.sensor = sensor;
     //}
+
+    @Override
+    public String toString() {
+        return "location: " + location+
+                ' ';
+    }
 
 }
