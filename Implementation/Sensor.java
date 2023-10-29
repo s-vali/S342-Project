@@ -48,5 +48,10 @@ public class Sensor {
         	sensorId += 1;
         	return sensorId;
     	}
+
+	@Override
+    	public String toString() {
+        	return "sensorID: " + sensorID + ' ';
+    	}
 	
 } //end of class
