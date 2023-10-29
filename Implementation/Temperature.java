@@ -12,4 +12,9 @@ public class Temperature {
         return this.temperature;
     }
 
+    @Override
+    public String toString() {
+        return "temperature: " + temperature;
+    }
+
 }
