@@ -2,7 +2,7 @@ public class Location
 {
     private boolean isCovered;
     private String location;
-    //private Sensor sensor;
+    private Sensor sensor;
 
     //@Override
     //public String toString() {

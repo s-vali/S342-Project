@@ -73,4 +73,14 @@ public class MapOfSL
         }
     }
 
+    public Sensor getSensorMap(Location location) {
+    	for (HashMap.Entry<Sensor, Location> entry : Maps.getMaps().entrySet()) {
+    	    Sensor key = entry.getKey();
+    	    if(entry.getValue().equals(location)) {
+    	    	return key;
+    	    }
+    	}
+    	return null; //no sensor was found in the table
+    }
+    
 }

@@ -11,20 +11,13 @@ public class Sensor {
 	private SensorRegistry sensorRegistry; 
 	private static int sensorId = 0;
 
-    // Assign unique ids to a sensor when deployed.
-    public static int getNextUniqueNumber(){
-        sensorId += 1;
-        return sensorId;
-    }
-
 	/*
 	 * Constructor
 	 */
-        public Sensor(){
-        this.sensorID = getNextUniqueNumber();
-        SensorRegistry.getSensorRegistry().add(this);
+        public Sensor() {
+        	this.sensorID = getNextUniqueNumber();
+        	SensorRegistry.getSensorRegistry().add(this); //adds sensor to sensor registry
         }
-	
 	public Sensor(boolean isDeployed, int sensorID) {
 		this.isDeployed = isDeployed;
 		this.sensorID = sensorID;
@@ -47,5 +40,18 @@ public class Sensor {
 	public void setLocation(Location location) { this.location = location; }
 	public Temperature getTemperature() { return temperature; }
 	public void setTemperature(Temperature temperature) { this.temperature = temperature; }
+
+	/*
+	 * Methods
+	 */
+    	public static int getNextUniqueNumber() { // Assign unique ids to a sensor when deployed
+        	sensorId += 1;
+        	return sensorId;
+    	}
+
+	@Override
+    	public String toString() {
+        	return "sensorID: " + sensorID + ' ';
+    	}
 	
 } //end of class

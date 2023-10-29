@@ -8,7 +8,7 @@ public class Read {
 	 */
 	private Temperature temperature;
 	private Sensor sensor;
-	//private HashMap<Sensor, Temperature> sensorTemperaturePairs;
+	private HashMap<Sensor, Temperature> sensorTemperaturePairs;
 	
 	/*
 	 * Constructor
@@ -22,40 +22,40 @@ public class Read {
 	/*
 	 * Getters and Setters
 	 */
-	//public HashMap<Sensor, Temperature> getSensorTemperaturePairs() { return sensorTemperaturePairs; }
-	//public void setSensorTemperaturePairs(HashMap<Sensor, Temperature> sensorTemperaturePairs) { this.sensorTemperaturePairs = sensorTemperaturePairs; }
+	public HashMap<Sensor, Temperature> getSensorTemperaturePairs() { return sensorTemperaturePairs; }
+	public void setSensorTemperaturePairs(HashMap<Sensor, Temperature> sensorTemperaturePairs) { this.sensorTemperaturePairs = sensorTemperaturePairs; }
 
 	/*
 	 * Methods
-	 */
-	public String toString() {
-        return "MapsSensorTemp{" +
-                "sensorTemperaturePairs=" + Reads.getReads() +
-                '}';
-    }
-	
-	/*
-	 * DOM'S CODE FOR ADD(SENSOR, TEMPERATURE) HERE
 	 */
 	public static void deploySensorTemp(Sensor sensor){
 		Temperature temp = new Temperature();
 		Reads.getReads().put(sensor, temp);
 	}
 	
-	//Will continue readTemperature(location) later
 	public Temperature readTemperature(Location location) {
-		Map map = new Map(); 
+		MapOfSL map = new MapOfSL(); 
 		boolean has = map.hasLocation(location);
 		if(has) {
 			Sensor sensor = map.getSensorMap(location);
+			if(sensor == null) {
+				System.out.println("No sensor is deployed at this location.");
+				return null;
+			}
 			Temperature temperature = Reads.getReads().get(sensor);
-			System.out.println("ok");
+			System.out.println("Ok, from readTemperature(" + location + ").");
 			return temperature;
 		}
 		else {
-			System.out.println("Location not covered.");
+			System.out.println("Location not covered, from readTemperature(" + location + ").");
 		}
 		return null;
-	}	
+	}
+
+	public String toString() {
+        return "MapsSensorTemp{" +
+                "sensorTemperaturePairs=" + Reads.getReads() +
+                '}';
+    	}
 
 } //end of class
