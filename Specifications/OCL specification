@@ -1,5 +1,7 @@
+3. "Every deployed sensor must be associated with a location that exists in the correspond- ing location registry"
 
-
+context Sensor
+  inv: isDeployed = 'true' implies self.Location.LocationRegistry → exists(self.Location)
 
 4. "Every location maintained by the system is associated with a unique sensor"
 
