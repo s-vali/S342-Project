@@ -1,0 +1,7 @@
+
+
+
+4. "Every location maintained by the system is associated with a unique sensor"
+
+context Location
+  inv: self.allInstances() → forAll(L1, L2 | L1 <> L2 implies L1.sensor <> L2.sensor)
