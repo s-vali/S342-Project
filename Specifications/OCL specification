@@ -1,3 +1,14 @@
+1. “Each sensor deployed by the system must have a unique id”
+
+context Map
+	inv: self.maps.sensor → forAll(s1, s2 : Sensor | s1 <> s2 implies 
+                                  s1.sensorID <> s2.sensorID)
+
+2. “All sensors deployed in the system are sensors that are maintained by the system”
+
+context Maps
+	inv: self.map.sensor.sensorRegistry → includesAll(self.sensor)
+
 3. "Every deployed sensor must be associated with a location that exists in the correspond- ing location registry"
 
 context Sensor
