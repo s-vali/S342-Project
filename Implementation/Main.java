@@ -62,5 +62,9 @@ public class Main {
 	
 	System.out.println("\n--Testing on location that does not exist in LocationRegistry");
 	Temperature.showTemperature(reads.readTemperature(new Location("Boston")));
+
+	/*Testing returning <Location, Temperature>*/
+	System.out.println("\n--Testing new function returnLocationTemperature() for <Location, Temperature> pairs deployed in the tables Maps and Reads: ");
+    	Read.returnLocationTemperature();
     }
 }
