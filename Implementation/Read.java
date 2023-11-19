@@ -8,7 +8,7 @@ public class Read {
 	 */
 	private Temperature temperature;
 	private Sensor sensor;
-	private HashMap<Sensor, Temperature> sensorTemperaturePairs;
+	private static HashMap<Sensor, Temperature> sensorTemperaturePairs;
 	
 	/*
 	 * Constructor
@@ -33,7 +33,7 @@ public class Read {
 		Reads.getReads().put(sensor, temp);
 	}
 	
-	public Temperature readTemperature(Location location) {
+	public static Temperature readTemperature(Location location) {
 		MapOfSL map = new MapOfSL(); 
 		boolean has = map.hasLocation(location);
 		if(has) {
@@ -53,9 +53,33 @@ public class Read {
 	}
 
 	public String toString() {
-        return "MapsSensorTemp{" +
+        return "ReadsSensorTemp{" +
                 "sensorTemperaturePairs=" + Reads.getReads() +
                 '}';
     	}
+	
+	//NEW METHOD PAIRS LOCATION AND TEMPERATURE
+    public static HashMap<Location, Temperature> returnLocationTemperature() {
+        /*obtain the necessary tables*/
+        HashMap<Sensor, Location> maps = Maps.getMaps(); //<sensor, location>
+        sensorTemperaturePairs = Reads.getReads(); //<sensor, temperature> //CHANGED TO STATIC
+        /*create new table of <location, temperature>*/
+        final HashMap<Location, Temperature> locationTempPairs = new HashMap<>(); //<location, temperature>
+        
+        /*iterate through both hashMaps and compare their sensors (sensors=key)*/
+        for(HashMap.Entry<Sensor, Location> sl : maps.entrySet()) {
+            for(HashMap.Entry<Sensor, Temperature> st : sensorTemperaturePairs.entrySet()) {
+                if(sl.getKey().getSensorID() == st.getKey().getSensorID()) {
+                    locationTempPairs.put(sl.getValue(), st.getValue()); //<location, temperature>
+                }
+            }
+        }
+        
+        /*print out <location, temperature> table*/
+        for(HashMap.Entry<Location, Temperature> entry : locationTempPairs.entrySet()) {
+            System.out.println("<" + entry.getKey() + ", " + entry.getValue() + ">");
+        }
 
+        return locationTempPairs; 
+    }
 } //end of class
