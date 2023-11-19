@@ -66,5 +66,30 @@ public class Main {
 	/*Testing returning <Location, Temperature>*/
 	System.out.println("\n--Testing new function returnLocationTemperature() for <Location, Temperature> pairs deployed in the tables Maps and Reads: ");
     	Read.returnLocationTemperature();
+
+	/* Iteration 2 video
+
+        Sensor s1 = new Sensor();
+        Sensor s2 = new Sensor();
+        Sensor s3 = new Sensor();
+        Sensor s4 = new Sensor();
+        Location l1 = new Location("Montreal");
+        Location l2 = new Location("Detroit");
+        Location l3 = new Location("Quebec");
+        LocationRegistry.addLocation(l1);
+        LocationRegistry.addLocation(l2);
+        LocationRegistry.addLocation(l3);
+        MapOfSL maps = new MapOfSL();
+        Read r = new Read();
+
+        maps.DeploySensorLocation(s1,l1);
+        maps.DeploySensorLocation(s2,l2);
+        maps.DeploySensorLocation(s3,l3);
+
+        System.out.println(SensorRegistry.getSensorRegistry());
+        maps.DeleteFromRegistery(s2);
+        System.out.println(SensorRegistry.getSensorRegistry());
+        
+        */
     }
 }
