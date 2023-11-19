@@ -1,4 +1,5 @@
 import java.util.HashMap;
+import java.util.Map;
 
 public class MapOfSL
 {
@@ -92,4 +93,19 @@ public class MapOfSL
     	return null; //no sensor was found in the table
     }
     
+    public Map.Entry<Sensor, Location> searchForSensor(Sensor s){
+        for (Map.Entry<Sensor, Location> entry : Maps.getMaps().entrySet()) {
+            Sensor sensor = entry.getKey();
+            if(sensor.getSensorID() == (s.getSensorID())){
+                return entry;
+            }
+        }
+        return null;
+    }
+
+    public void DeleteFromRegistery(Sensor s){
+        SensorRegistry reg = new SensorRegistry(s);
+        reg.removeSensor(s);
+    }
+
 }
