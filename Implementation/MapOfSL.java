@@ -5,7 +5,16 @@ public class MapOfSL
     private Sensor sensor;
     private Location location;
     
-
+    public void ReplaceSensor(Sensor s, Sensor sensor2){
+        if(searchForSensor(s) !=null) {
+            Location l = s.getLocation();
+            sensor2.setLocation(l);
+            Reads.getReads().put(sensor2, Read.readTemperature(l));
+            Reads.getReads().remove(s);
+            Maps.getMaps().put(sensor2, l);
+            Maps.getMaps().remove(s);
+        }
+    }
 
     public HashMap<Sensor, Location> getSensorLocationPairs() {
         return Maps.getMaps();
